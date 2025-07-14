@@ -9,10 +9,10 @@ test("renders without errors", () => {
 });
 
 test("renders the correct child components", () => {
-  const { container } = render(<App />);
-  expect(container.querySelector("nav")).toBeInTheDocument();
-  expect(container.querySelector("#home")).toBeInTheDocument();
-  expect(container.querySelector("#about")).toBeInTheDocument();
+  render(<App />);
+  expect(screen.getByRole("navigation")).toBeInTheDocument();
+  expect(screen.getByTestId("home")).toBeInTheDocument();
+  expect(screen.getByTestId("about")).toBeInTheDocument();
 });
 
 test("passes 'name', 'city', and 'color' to <Home> as props", () => {
