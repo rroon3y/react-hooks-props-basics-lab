@@ -1,24 +1,11 @@
-function Links({ github, linkedin }) {
+import React from "react";
+ function Links(props) {
   return (
     <div>
       <h3>Links</h3>
-      {github && (
-        <a href={github} target="_blank" rel="noopener noreferrer">
-          {github}
-        </a>
-      )}
-      {linkedin && (
-        <a
-          href={linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ marginLeft: "10px" }}
-        >
-          {linkedin}
-        </a>
-      )}
-    </div>
-  );
+      <a href={props.github}>{props.github}</a>
+      <a href={props.linkedin}>{props.linkedin}</a>
+      </div>
+  )
 }
-
 export default Links;
